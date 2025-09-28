@@ -1,0 +1,1415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Use ChatGPT | ChatGPT Full Course 2025</title>
+    <meta name="description" content="Master ChatGPT in 2025 with our comprehensive course. Learn prompt engineering, automation, and AI integration.">
+    <meta name="keywords" content="ChatGPT, AI Course, Prompt Engineering, Murli Kumar">
+    <meta name="author" content="Murli Kumar">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-blue: #1E90FF;
+            --primary-pink: #FF6FB5;
+            --dark-blue: #0F4C75;
+            --light-blue: #E6F2FF;
+            --light-pink: #FFE6F2;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --gradient: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
+            --gradient-light: linear-gradient(135deg, var(--light-blue), var(--light-pink));
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(30, 144, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            color: var(--dark-gray);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 160px 0 100px;
+            background: var(--gradient-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.ibb.co/MFkSDX0/hq720.webp') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            z-index: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* ===== CURRICULUM SECTION ===== */
+        .curriculum {
+            background: var(--light-gray);
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .chapter-card {
+            position: relative;
+            padding: 25px;
+            border-left: 4px solid var(--primary-blue);
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .chapter-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            box-shadow: var(--shadow-light);
+        }
+
+        .chapter-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .chapter-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .chapter-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .chapter-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .video-placeholder {
+            background: #000;
+            color: white;
+            padding: 60px 20px;
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            min-height: 400px;
+        }
+
+        .video-placeholder i {
+            font-size: 60px;
+            color: var(--primary-blue);
+        }
+
+        .password-required {
+            color: #ff6b6b;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Responsive video container */
+        .responsive-video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .responsive-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            background: var(--gradient-light);
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 60px;
+            color: var(--light-blue);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--white);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            background: var(--white);
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px 40px;
+            border: 2px solid var(--light-blue);
+            border-radius: var(--radius);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--medium-gray);
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features i {
+            color: var(--primary-blue);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .creator-credit {
+            font-weight: 600;
+            color: var(--white);
+            margin-top: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .creator-credit i {
+            color: var(--primary-pink);
+        }
+
+        /* ===== MODAL STYLES ===== */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(50px);
+            transition: var(--transition);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            font-size: 24px;
+            color: var(--medium-gray);
+        }
+
+        .modal-title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.1);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .support-link {
+            color: var(--primary-blue);
+            text-decoration: underline;
+        }
+
+        /* ===== STICKY CTA ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            z-index: 999;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .sticky-cta.active {
+            transform: translateY(0);
+        }
+
+        .sticky-cta .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .sticky-cta .container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .chapter-actions {
+                flex-direction: column;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ===== ANIMATION UTILITIES ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="https://i.ibb.co/Rkrh87BW/Picsart-25-09-10-08-10-53-258.webp" alt="ChatGPT Course Logo">
+                    <span>ChatGPT Course</span>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#curriculum">Curriculum</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <button class="btn btn-primary" id="enrollBtn">Enroll Now</button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <span class="hero-badge">Full Course - ₹18,000</span>
+                    <h1 class="hero-title">How To Use ChatGPT<br>ChatGPT Full Course 2025</h1>
+                    <p class="hero-subtitle">Master prompt engineering, productivity workflows, AI creativity, and real-world applications. Go from beginner to advanced with hands-on projects and personalized feedback.</p>
+                    
+                    <div class="hero-cta">
+                        <button class="btn btn-primary" id="viewCourseBtn">View Course</button>
+                        <button class="btn btn-secondary" id="previewBtn">Free Preview</button>
+                    </div>
+                </div>
+                
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <img src="https://i.ibb.co/MFkSDX0/hq720.webp" alt="ChatGPT Course Banner">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">What You'll Learn</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Prompt Engineering</h3>
+                    <p>Master the art of crafting effective prompts to get the best results from ChatGPT for any task. Learn advanced techniques that professionals use.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Automation</h3>
+                    <p>Learn to integrate ChatGPT into your daily workflows to save time and boost productivity. Automate repetitive tasks with AI assistance.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Creative Applications</h3>
+                    <p>Discover innovative ways to use ChatGPT for content creation, problem-solving, and more. Unleash your creativity with AI-powered tools.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>API Integration</h3>
+                    <p>Learn how to integrate ChatGPT API into your applications and websites. Build powerful AI-powered solutions with practical coding examples.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Applications</h3>
+                    <p>Discover how to leverage ChatGPT for business growth, marketing strategies, customer service, and data analysis to gain competitive advantage.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Advanced Techniques</h3>
+                    <p>Master advanced ChatGPT techniques including fine-tuning, context management, and specialized applications for various industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="section curriculum" id="curriculum">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Course Curriculum</h2>
+            
+            <div class="curriculum-grid">
+                <div class="chapter-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="chapter-number">1</div>
+                    <div class="chapter-content">
+                        <h3>Introduction & Course Overview</h3>
+                        <div class="chapter-meta">
+                            <span><i class="far fa-clock"></i> 45 min</span>
+                            <span><i class="far fa-file-alt"></i> 4 lessons</span>
+                        </div>
+                        <p>Get familiar with the course structure, learning objectives, and what you'll achieve by the end.</p>
+                        <div class="chapter-actions">
+                            <button class="btn btn-primary btn-small" onclick="showPasswordModal()">View Content</button>
+                            <button class="btn btn-secondary btn-small">Download Notes</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chapter-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="chapter-number">2</div>
+                    <div class="chapter-content">
+                        <h3>Basics of ChatGPT</h3>
+                        <div class="chapter-meta">
+                            <span><i class="far fa-clock"></i> 1.5 hours</span>
+                            <span><i class="far fa-file-alt"></i> 6 lessons</span>
+                        </div>
+                        <p>Understand what ChatGPT is, how it works, and its capabilities and limitations.</p>
+                        <div class="chapter-actions">
+                            <button class="btn btn-primary btn-small" onclick="showPasswordModal()">View Content</button>
+                            <button class="btn btn-secondary btn-small">Download Notes</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chapter-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="chapter-number">3</div>
+                    <div class="chapter-content">
+                        <h3>Prompt Engineering</h3>
+                        <div class="chapter-meta">
+                            <span><i class="far fa-clock"></i> 2.5 hours</span>
+                            <span><i class="far fa-file-alt"></i> 8 lessons</span>
+                        </div>
+                        <p>Learn advanced techniques for crafting prompts that yield precise and useful responses.</p>
+                        <div class="chapter-actions">
+                            <button class="btn btn-primary btn-small" onclick="showPasswordModal()">View Content</button>
+                            <button class="btn btn-secondary btn-small">Download Notes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section video-section" id="video">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Course Video</h2>
+            
+            <div class="video-container" data-aos="zoom-in" data-aos-delay="100">
+                <div id="videoPlayer">
+                    <!-- Video will be loaded here after password authentication -->
+                    <div class="video-placeholder">
+                        <i class="fas fa-lock"></i>
+                        <h3>Course Video Locked</h3>
+                        <p>Enter the password to unlock the full course video content</p>
+                        <p class="password-required">Without entering password, you cannot play this video</p>
+                        <button class="btn btn-primary" id="unlockVideoBtn">Unlock Video</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">What Students Say</h2>
+            
+            <div class="testimonials-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-slider">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">This course completely transformed how I use ChatGPT. I went from basic queries to creating complex automated workflows that save me hours every week.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Priya Sharma">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Priya Sharma</h4>
+                                        <p>Content Creator</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">The prompt engineering section alone was worth the price of the course. I've doubled my productivity at work by implementing the techniques taught here.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Rahul Verma">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Rahul Verma</h4>
+                                        <p>Marketing Manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-nav">
+                    <span class="slider-dot active" data-slide="0"></span>
+                    <span class="slider-dot" data-slide="1"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Course Pricing</h2>
+            
+            <div class="pricing-card" data-aos="zoom-in" data-aos-delay="100">
+                <h3>Full Course Access</h3>
+                <div class="price">₹18,000</div>
+                <p class="price-period">One-time payment • Lifetime access</p>
+                
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> 12 comprehensive chapters</li>
+                    <li><i class="fas fa-check"></i> 50+ video lessons</li>
+                    <li><i class="fas fa-check"></i> Downloadable resources & notes</li>
+                    <li><i class="fas fa-check"></i> Practical projects & exercises</li>
+                    <li><i class="fas fa-check"></i> Certificate of completion</li>
+                    <li><i class="fas fa-check"></i> Q&A support</li>
+                    <li><i class="fas fa-check"></i> Future updates included</li>
+                </ul>
+                
+                <button class="btn btn-primary" id="pricingEnrollBtn">Enroll Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.ibb.co/Rkrh87BW/Picsart-25-09-10-08-10-53-258.webp" alt="ChatGPT Course Logo">
+                    <span>ChatGPT Course</span>
+                </div>
+                <div class="footer-about">
+                    <p>Master ChatGPT in 2025 with our comprehensive course designed for beginners and advanced users alike. Transform your skills with hands-on projects and expert guidance.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ChatGPT Full Course.</p>
+                <p class="creator-credit">
+                    <i class="fas fa-code"></i> Website developed By Murli Kumar <i class="fas fa-heart"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Password Modal -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h3 class="modal-title">Enter Course Password</h3>
+            <p>Please enter the password to access the full course content.</p>
+            
+            <div class="form-group">
+                <label for="passwordInput" class="form-label">Password</label>
+                <input type="password" id="passwordInput" class="form-input" placeholder="Enter password">
+                <div class="error-message" id="passwordError">Incorrect password. <a href="/support?issue=access_error" class="support-link">Report problem / Error link</a></div>
+            </div>
+            
+            <button class="btn btn-primary" id="passwordSubmit">Submit</button>
+        </div>
+    </div>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="container">
+            <div>
+                <div class="sticky-price">₹18,000</div>
+                <p>Full Course Access</p>
+            </div>
+            <button class="btn btn-primary" id="stickyEnrollBtn">Enroll Now</button>
+        </div>
+    </div>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Password configuration
+        const CORRECT_PASSWORD = "Murlikumar76";
+        
+        // Google Drive Video Embed Code
+        const VIDEO_EMBED_CODE = '<div class="responsive-video"><iframe src="https://drive.google.com/file/d/12LW3N2lsFA1VLpI76KGYMGvjV2uWQUxa/preview" allow="autoplay"></iframe></div>';
+        
+        // DOM Elements
+        const viewCourseBtn = document.getElementById('viewCourseBtn');
+        const passwordModal = document.getElementById('passwordModal');
+        const modalClose = document.getElementById('modalClose');
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordSubmit = document.getElementById('passwordSubmit');
+        const passwordError = document.getElementById('passwordError');
+        const enrollBtn = document.getElementById('enrollBtn');
+        const pricingEnrollBtn = document.getElementById('pricingEnrollBtn');
+        const stickyEnrollBtn = document.getElementById('stickyEnrollBtn');
+        const stickyCta = document.getElementById('stickyCta');
+        const header = document.getElementById('header');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const unlockVideoBtn = document.getElementById('unlockVideoBtn');
+        const videoPlayer = document.getElementById('videoPlayer');
+        
+        // Testimonial slider
+        const testimonialTrack = document.getElementById('testimonialTrack');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        
+        // Check if password is already saved
+        function checkSavedPassword() {
+            const savedPassword = localStorage.getItem('chatgptCoursePassword');
+            if (savedPassword === CORRECT_PASSWORD) {
+                loadVideoContent();
+            }
+        }
+        
+        // Load video content
+        function loadVideoContent() {
+            videoPlayer.innerHTML = VIDEO_EMBED_CODE;
+        }
+        
+        // Show password modal
+        function showPasswordModal() {
+            passwordModal.classList.add('active');
+            passwordInput.focus();
+        }
+        
+        // Open password modal
+        viewCourseBtn.addEventListener('click', showPasswordModal);
+        unlockVideoBtn.addEventListener('click', showPasswordModal);
+        
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            passwordModal.classList.remove('active');
+            passwordError.classList.remove('show');
+            passwordInput.value = '';
+        });
+        
+        // Check password
+        passwordSubmit.addEventListener('click', checkPassword);
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        function checkPassword() {
+            if (passwordInput.value === CORRECT_PASSWORD) {
+                // Success - save password and load video
+                localStorage.setItem('chatgptCoursePassword', passwordInput.value);
+                passwordModal.classList.remove('active');
+                passwordError.classList.remove('show');
+                passwordInput.value = '';
+                loadVideoContent();
+                
+                // Scroll to video section
+                document.getElementById('video').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Show error
+                passwordError.classList.add('show');
+            }
+        }
+        
+        // Enrollment buttons
+        enrollBtn.addEventListener('click', showPasswordModal);
+        pricingEnrollBtn.addEventListener('click', showPasswordModal);
+        stickyEnrollBtn.addEventListener('click', showPasswordModal);
+        
+        // Sticky CTA
+        window.addEventListener('scroll', () => {
+            // Show/hide sticky CTA
+            if (window.scrollY > 500) {
+                stickyCta.classList.add('active');
+            } else {
+                stickyCta.classList.remove('active');
+            }
+            
+            // Header scroll effect
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Testimonial slider
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            sliderDots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Dot click events
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        
+        // Auto slide
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % sliderDots.length;
+            goToSlide(currentSlide);
+        }, 5000);
+        
+        // Mobile menu
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === passwordModal) {
+                passwordModal.classList.remove('active');
+                passwordError.classList.remove('show');
+                passwordInput.value = '';
+            }
+        });
+        
+        // Check for saved password on page load
+        window.addEventListener('DOMContentLoaded', checkSavedPassword);
+    </script>
+</body>
+</html>
