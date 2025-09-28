@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -463,15 +462,16 @@
             margin-top: 10px;
         }
 
-        /* Responsive video container */
-        .responsive-video {
+        /* Vimeo video container */
+        .vimeo-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
+            background: #000;
         }
 
-        .responsive-video iframe {
+        .vimeo-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -1232,8 +1232,21 @@
         // Password configuration
         const CORRECT_PASSWORD = "Murlikumar76";
         
-        // Google Drive Video Embed Code
-        const VIDEO_EMBED_CODE = '<div class="responsive-video"><iframe src="https://drive.google.com/file/d/12LW3N2lsFA1VLpI76KGYMGvjV2uWQUxa/preview" allow="autoplay"></iframe></div>';
+        // Vimeo embed code
+        const VIMEO_EMBED_CODE = `
+            <div class="vimeo-container">
+                <iframe src="https://player.vimeo.com/video/1122572819?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"><\/script>
+            <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--medium-gray)">
+                Video loaded successfully. You can now watch the full course content.
+            </p>
+        `;
         
         // DOM Elements
         const viewCourseBtn = document.getElementById('viewCourseBtn');
@@ -1265,9 +1278,25 @@
             }
         }
         
-        // Load video content
+        // Load video content with Vimeo embed
         function loadVideoContent() {
-            videoPlayer.innerHTML = VIDEO_EMBED_CODE;
+            videoPlayer.innerHTML = VIMEO_EMBED_CODE;
+            
+            // Initialize Vimeo player
+            setTimeout(() => {
+                const iframe = document.querySelector('iframe');
+                if (iframe) {
+                    const player = new Vimeo.Player(iframe);
+                    
+                    player.on('play', function() {
+                        console.log('Video is playing');
+                    });
+                    
+                    player.on('fullscreenchange', function(data) {
+                        console.log('Fullscreen changed:', data);
+                    });
+                }
+            }, 500);
         }
         
         // Show password modal
